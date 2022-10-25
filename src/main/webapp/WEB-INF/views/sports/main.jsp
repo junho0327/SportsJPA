@@ -20,6 +20,20 @@
   <!-- Custom styles for this template-->
   <link href="/css/sb-admin-2.min.css" rel="stylesheet">
 
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript">
+    //날씨 데이터 불러오기
+    $.ajax({
+      url:'https://api.openweathermap.org/data/2.5/weather?q=Goyang-si&appid=25faf339a8c1207d7ffac0a85a684851',
+      dataType:'json',
+      type:'GET',
+      success:function(data){
+        var $Icon = data.weather[0].icon;
+        $('.weather-info').append('<img src="http://openweathermap.org/img/wn/' + $Icon + '@2x.png" />');
+      }
+    });
+  </script>
+
 </head>
 
 <body id="page-top">
@@ -85,6 +99,7 @@
           <h6 class="collapse-header">커뮤니티</h6>
           <a class="collapse-item" href="/notice/noticeList">공지사항</a>
           <a class="collapse-item" href="/chat/intro">채팅방</a>
+
         </div>
       </div>
     </li>
@@ -112,6 +127,7 @@
           <a class="collapse-item" href="/user/UserRegForm">회원가입</a>
         </div>
       </div>
+      <div class="weather-info"></div>
     </li>
 
     <!-- Divider -->
