@@ -24,7 +24,7 @@
   <script type="text/javascript">
     //날씨 데이터 불러오기
     $.ajax({
-      url:'https://api.openweathermap.org/data/2.5/weather?q=Goyang-si&appid=25faf339a8c1207d7ffac0a85a684851',
+      url:'https://api.openweathermap.org/data/2.5/weather?q=Goyang-si&appid=*',
       dataType:'json',
       type:'GET',
       success:function(data){
